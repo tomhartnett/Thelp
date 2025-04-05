@@ -9,52 +9,20 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @State var encoded = ""
-    @State var decoded = ""
-
     var body: some View {
         VStack {
-            TextEditor(text: $encoded)
-
-            HStack {
-                Button(action: {
-                    decoded = encoded.removingPercentEncoding ?? ""
-                }) {
-                    Text("↓ Decode")
-                }
-
-                Button(action: {
-                    encoded = ""
-                    decoded = ""
-                }) {
-                    Text("Clear")
-                }
-
-                Button(action: {
-                    let allowedCharacters = CharacterSet.urlQueryAllowed
-                        .union(.urlPathAllowed)
-                        .union(.urlHostAllowed)
-                        .union(.urlFragmentAllowed)
-                        .union(.urlUserAllowed)
-                        .union(.urlPasswordAllowed)
-
-                    encoded = decoded.addingPercentEncoding(withAllowedCharacters: allowedCharacters) ?? ""
-                }) {
-                    Text("Encode ↑")
-                }
+            TabView {
+                Tab(
+                    content: { URLView() },
+                    label: { Text("URLs") }
+                )
+                Tab(
+                    content: { Base64View() },
+                    label: { Text("Base64") }
+                )
             }
-
-            TextEditor(text: $decoded)
         }
         .padding()
-    }
-
-    func decode() {
-        
-    }
-
-    func encode() {
-
     }
 }
 
