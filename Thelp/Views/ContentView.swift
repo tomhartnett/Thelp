@@ -9,15 +9,18 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
+    @State private var base64ViewModel: ViewModel = Base64ViewModel()
+    @State private var urlViewModel: ViewModel = URLViewModel()
+
     var body: some View {
         VStack {
             TabView {
                 Tab(
-                    content: { URLView() },
+                    content: { CodecView(viewModel: $urlViewModel) },
                     label: { Text("URLs") }
                 )
                 Tab(
-                    content: { Base64View() },
+                    content: { CodecView(viewModel: $base64ViewModel) },
                     label: { Text("Base64") }
                 )
             }
