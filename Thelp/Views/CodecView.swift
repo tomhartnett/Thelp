@@ -20,6 +20,8 @@ struct CodecView: View {
     var body: some View {
         VStack {
             HStack(spacing: 8) {
+                Text(viewModel.title)
+
                 Spacer()
 
                 Button(action: {
@@ -39,9 +41,15 @@ struct CodecView: View {
             .buttonStyle(PlainButtonStyle())
             .padding(.trailing, 12)
 
-            TextEditor(text: $viewModel.encoded)
-                .monospaced()
-                .focused($focusedField, equals: Field.encodedText)
+            ZStack {
+                TextEditor(text: $viewModel.encoded)
+                    .monospaced()
+                    .focused($focusedField, equals: Field.encodedText)
+
+                Text("Enter text to decode here")
+                    .foregroundStyle(.secondary)
+                    .opacity(viewModel.encoded.isEmpty ? 1 : 0)
+            }
 
             HStack {
                 HStack {

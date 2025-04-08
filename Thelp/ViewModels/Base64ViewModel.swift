@@ -13,6 +13,8 @@ class Base64ViewModel: ViewModel {
     
     var decoded = ""
 
+    let title = "Base64 Encoder & Decoder"
+
     func clearAll() {
         encoded = ""
         decoded = ""

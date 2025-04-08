@@ -13,6 +13,8 @@ class URLViewModel: ViewModel {
 
     var decoded = ""
 
+    let title = "URL Encoder & Decoder"
+
     func clearAll() {
         encoded = ""
         decoded = ""
