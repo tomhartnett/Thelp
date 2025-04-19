@@ -24,21 +24,8 @@ struct CodecView: View {
 
                 Spacer()
 
-                Button(action: {
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.clearContents()
-                    pasteboard.setString(viewModel.encoded, forType: .string)
-                }) {
-                    Image(systemName: "clipboard")
-                }
-
-                Button(role: .destructive, action: {
-                    viewModel.encoded = ""
-                }) {
-                    Image(systemName: "clear")
-                }
+                ToolbarView(text: $viewModel.encoded)
             }
-            .buttonStyle(PlainButtonStyle())
             .padding(.trailing, 12)
 
             ZStack {
@@ -77,23 +64,8 @@ struct CodecView: View {
 
                 Spacer()
 
-                HStack {
-                    Button(action: {
-                        let pasteboard = NSPasteboard.general
-                        pasteboard.clearContents()
-                        pasteboard.setString(viewModel.decoded, forType: .string)
-                    }) {
-                        Image(systemName: "clipboard")
-                    }
-
-                    Button(role: .destructive, action: {
-                        viewModel.decoded = ""
-                    }) {
-                        Image(systemName: "clear")
-                    }
-                }
-                .buttonStyle(PlainButtonStyle())
-                .padding(.trailing, 12)
+                ToolbarView(text: $viewModel.decoded)
+                    .padding(.trailing, 12)
             }
 
             TextEditor(text: $viewModel.decoded)
