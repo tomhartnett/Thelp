@@ -8,6 +8,9 @@
 
 /* Begin PBXFileReference section */
 		E20CEA652D958C0100F56534 /* Thelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2BAA80D2DB5520700E53E96 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
+		E2BAA80E2DB5520700E53E96 /* Configuration-template.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Configuration-template.xcconfig"; sourceTree = "<group>"; };
+		E2BAA80F2DB5520700E53E96 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +35,9 @@
 		E20CEA5C2D958C0100F56534 = {
 			isa = PBXGroup;
 			children = (
+				E2BAA80F2DB5520700E53E96 /* README.md */,
+				E2BAA80E2DB5520700E53E96 /* Configuration-template.xcconfig */,
+				E2BAA80D2DB5520700E53E96 /* Configuration.xcconfig */,
 				E20CEA672D958C0100F56534 /* Thelp */,
 				E20CEA662D958C0100F56534 /* Products */,
 			);
@@ -127,6 +133,7 @@
 /* Begin XCBuildConfiguration section */
 		E20CEA722D958C0200F56534 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2BAA80D2DB5520700E53E96 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -180,7 +187,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -192,6 +198,7 @@
 		};
 		E20CEA732D958C0200F56534 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2BAA80D2DB5520700E53E96 /* Configuration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -239,7 +246,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -249,6 +255,7 @@
 		};
 		E20CEA752D958C0200F56534 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2BAA80D2DB5520700E53E96 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -267,7 +274,6 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sleekible.Thelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -276,6 +282,7 @@
 		};
 		E20CEA762D958C0200F56534 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2BAA80D2DB5520700E53E96 /* Configuration.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -294,7 +301,6 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sleekible.Thelp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

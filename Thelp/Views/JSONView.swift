@@ -23,6 +23,7 @@ struct JSONView: View {
                 }) {
                     Text("Format")
                 }
+                .buttonStyle(AccessoryBarActionButtonStyle())
 
                 Text(errorMessage)
                     .foregroundStyle(Color(.appRed))
@@ -45,7 +46,7 @@ struct JSONView: View {
         .onAppear {
             isFocused = true
         }
-        .onChange(of: text) { _, new in
+        .onChange(of: text) { _, _ in
             errorMessage = ""
         }
     }
