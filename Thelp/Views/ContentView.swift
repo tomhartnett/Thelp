@@ -16,12 +16,16 @@ struct ContentView: View {
         VStack {
             TabView {
                 Tab(
-                    content: { CodecView(viewModel: $urlViewModel) },
-                    label: { Text("URLs") }
+                    content: { JSONView() },
+                    label: { Text("JSON") }
                 )
                 Tab(
                     content: { CodecView(viewModel: $base64ViewModel) },
                     label: { Text("Base64") }
+                )
+                Tab(
+                    content: { CodecView(viewModel: $urlViewModel) },
+                    label: { Text("URLs") }
                 )
             }
         }

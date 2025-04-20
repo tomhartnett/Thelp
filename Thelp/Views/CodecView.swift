@@ -29,8 +29,7 @@ struct CodecView: View {
             .padding(.trailing, 12)
 
             ZStack {
-                TextEditor(text: $viewModel.encoded)
-                    .monospaced()
+                InputTextView(text: $viewModel.encoded)
                     .focused($focusedField, equals: Field.encodedText)
 
                 Text("Enter text to decode here")
@@ -68,8 +67,7 @@ struct CodecView: View {
                     .padding(.trailing, 12)
             }
 
-            TextEditor(text: $viewModel.decoded)
-                .monospaced()
+            InputTextView(text: $viewModel.decoded)
         }
         .onAppear {
             focusedField = .encodedText

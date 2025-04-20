@@ -13,6 +13,8 @@ struct ToolbarView: View {
     var body: some View {
         HStack {
             Button(action: {
+                guard !text.isEmpty else { return }
+
                 let pasteboard = NSPasteboard.general
                 pasteboard.clearContents()
                 pasteboard.setString(text, forType: .string)
@@ -25,7 +27,7 @@ struct ToolbarView: View {
             }) {
                 Image(systemName: "trash")
             }
-            .foregroundStyle(Color(red: 0.87, green: 0, blue: 0))
+            .foregroundStyle(Color(.appRed))
         }
         .buttonStyle(PlainButtonStyle())
     }
